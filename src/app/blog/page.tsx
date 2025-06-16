@@ -1,12 +1,14 @@
-// Dummy imports
-import getPosts from "@/api/blog-posts";
+import getPosts from '@/api/blog-posts'
 import BlogPosts from '@/ui/blog-posts'
-import { BlogPost } from "@/lib/blog-post";
+import { BlogPost } from '@/lib/blog-post'
 
 export default async function BlogPage() {
     const posts: BlogPost[] = getPosts()
 
     return (
-        <BlogPosts posts={posts} />
+        <div className=" mx-auto">
+            <BlogPosts posts={posts} />
+        </div>
+
     )
 }

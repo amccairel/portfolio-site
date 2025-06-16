@@ -1,8 +1,21 @@
+import Link from "next/link";
+
+import ThemeToggle from "@/ui/theme-toggle";
+
 export default function Header() {
     return (
         <header className="bg-gray-900 text-white py-8 text-center">
-            <h1 className="text-4xl font-bold">Alex McCairel</h1>
-            <p className="text-lg mt-2">Software Engineer | Java · C++ · Python</p>
+            <nav className="flex items-center justify-between px-6 py-4 border-b border-gray-200 dark:border-gray-700">
+                <div className="text-lg font-semibold tracking-tight">
+                    <Link href="/" className="hover:underline">alex mccairel</Link> |
+                    software engineer
+                </div>
+                <div className="flex items-center space-x-6 text-sm font-medium">
+                    <Link href="/about" className="hover:text-blue-500">about</Link>
+                    <Link href="/blog" className="hover:text-blue-500">blog</Link>
+                    <ThemeToggle />
+                </div>
+            </nav>
         </header>
     )
 }
