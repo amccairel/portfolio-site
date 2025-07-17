@@ -1,13 +1,18 @@
-import {getPost} from "@/api/blog-posts";
+import BlogLayout from "@/app/blog/[slug]/layout";
 
-export default async function BlogPostPage({ params } : { params: Promise<{ slug: string}> }) {
+export default async function Page({ params } : { params: Promise<{ slug: string}> }) {
     const { slug } = await params
-    const post = getPost(slug)
+    const { default : Post } = await import(`@/content/blog/${slug}.mdx`)
 
     return (
-        <div>
-            <h1>{post?.title}</h1>
-            <p>{post?.content}</p>
-        </div>
+        <BlogLayout>
+            <Post />
+        </BlogLayout>
     )
 }
+
+export function generateStaticParams() {
+    return [{ slug: 'why-create-this'},{ slug: 'moving-averages'}]
+}
+
+export const dynamicParams = false
