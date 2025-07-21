@@ -1,64 +1,65 @@
 import fs from 'fs'
 import path from 'path'
+import matter from 'gray-matter'
+import { evaluate } from '@mdx-js/mdx'
+import * as runtime from 'react/jsx-runtime'
 
 const POSTS_PATH: string = path.join(process.cwd(), 'src/content/blog')
 
-type Metadata = {
-    title: string
-    date: string
-    summary: string
-}
-
-export function getBlogPosts() {
+export function getPostsMeta() {
     return getMDXData(POSTS_PATH)
 }
 
-/*
-export function formatDate(date: string): string {
-    const currentDate = new Date()
-}
+export async function getPost(slug: string) {
+    const filePath: string = path.join(POSTS_PATH, `${slug}.mdx`)
+    const rawContent: string = readMDXFile(filePath)
+    const { content } = parseContent(rawContent)
 
- */
+    const { default: Post } = await evaluate(content, {
+        ...runtime
+    })
+
+    return { Post }
+}
 
 function getMDXData(dir: string) {
     const mdxFiles: string[] = getMDXFiles(dir)
 
-    return mdxFiles.map((file) => {
-        const { metadata, content } = readMDXFile(path.join(dir, file))
-        const slug: string = path.basename(file, path.extname(file))
+    return mdxFiles.map((filepath: string) => {
+        const rawContent: string = readMDXFile(path.join(dir, filepath))
+        const { meta } = parseMetaData(rawContent)
 
-        return {
-            metadata,
-            slug,
-            content,
-        }
+        return { meta }
     })
 }
 
 function getMDXFiles(dir: string): string[] {
-    return fs.readdirSync(dir).filter((file) => path.extname(file) === '.mdx')
+    return fs.readdirSync(dir).filter((filepath: string): boolean => path.extname(filepath) === '.mdx')
 }
 
-function readMDXFile(path: string) {
-    const rawContent = fs.readFileSync(path, 'utf8')
-    return parseFrontmatter(rawContent)
+
+
+function readMDXFile(path: string): string {
+    return fs.readFileSync(path, 'utf8')
 }
 
-function parseFrontmatter(fileContent: string) {
-    const frontmatterRegex = /---\s*([\s\S]*?)\s*---/
-    const match = frontmatterRegex.exec(fileContent)
-    const frontMatterBlock = match![1]
-    const content = fileContent.replace(frontmatterRegex, '').trim()
-    const frontMatterLines = frontMatterBlock.trim().split('\n')
-    const metadata: Partial<Metadata> = {}
+/**
+ * Uses gray-matter plugin to read a raw string from an MDX file and parse the frontmatter (aka metadata)
+ * as well as the markdown content in the file..
+ *
+ * @param rawContent - mdx frontmatter and content
+ * @return meta - the meta data from the mdx file (e.g. yaml section)
+ * @return content - the markdown content of the mdx file
+ */
+function parseMetaData(rawContent: string) {
+    const { data } =  matter(rawContent)
 
-    frontMatterLines.forEach((line) => {
-        const [key, ...valueArr] = line.split(': ')
-        let value = valueArr.join(': ').trim()
-        value = value.replace(/^['"](.*)['"]$/, '$1') // Remove quotes
-        metadata[key.trim() as keyof Metadata] = value
-    })
+    return { meta: data }
+}
 
-    return { metadata: metadata as Metadata, content }
+function parseContent(rawContent: string) {
+    const { content } = matter(rawContent)
+
+    return { content }
 }
 

@@ -3,9 +3,9 @@ import DaBeach from '../../../public/da-beach.jpeg'
 
 export default function Page() {
     return (
-        <div className="max-w-3xl mx-auto p-6">
+        <div className="">
             <Image src={DaBeach} alt="An image of the beach in Pacifica, CA."  />
-            <section className="mb-8">
+            <section className="mb-8 px-6 py-12">
                 <h2 className="text-2xl font-semibold border-b pb-2 mb-4">About Me</h2>
                 <p>
                     I&apos;m a backend engineer with experience building scalable systems using C++, Java,

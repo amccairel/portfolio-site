@@ -1,13 +1,14 @@
-import BlogLayout from "@/app/blog/[slug]/layout";
+import MdxLayout from "@/app/blog/[slug]/layout";
+import { getPost } from "@/lib/mdx";
 
 export default async function Page({ params } : { params: Promise<{ slug: string}> }) {
     const { slug } = await params
-    const { default : Post } = await import(`@/content/blog/${slug}.mdx`)
+    const { Post } = await getPost(slug)
 
     return (
-        <BlogLayout>
+        <MdxLayout>
             <Post />
-        </BlogLayout>
+        </MdxLayout>
     )
 }
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/ui/header";
+import Footer from "@/ui/footer";
 
 export const metadata: Metadata = {
   title: "Alex McCairel | Portfolio",
@@ -29,9 +30,10 @@ export default function RootLayout({
         `
       }>
         <Header />
-        <main>
+        <main className="max-w-3xl mx-auto p-6">
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   )

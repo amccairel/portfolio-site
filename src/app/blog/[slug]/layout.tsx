@@ -1,8 +1,8 @@
-export default function BlogLayout({children}: {
+export default function MdxLayout({children}: {
     children: React.ReactNode
 }) {
     return (
-        <article className="max-w-3xl mx-auto p-6 prose dark:prose-invert">
+        <article className="px-3 prose dark:prose-invert">
             {children}
         </article>
     )

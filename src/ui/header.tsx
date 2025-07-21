@@ -4,7 +4,7 @@ import ThemeToggle from "@/ui/theme-toggle";
 
 export default function Header() {
     return (
-        <header className="bg-slate-900 text-white py-8 text-center">
+        <header className="max-w-3xl mx-auto px-6 py-8 text-center">
             <nav className="flex items-center justify-between px-6 py-4 border-b border-gray-200 dark:border-gray-700">
                 <div className="text-lg font-semibold tracking-tight">
                     <Link href="/" className="hover:underline">alex mccairel</Link> |

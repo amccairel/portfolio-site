@@ -1,15 +1,17 @@
-import { getBlogPosts } from "@/lib/mdx";
+import { getPostsMeta } from "@/lib/mdx";
 import Link from "next/link";
 
 export default async function BlogPostsPage() {
-    const posts = getBlogPosts()
+    const postsMeta = getPostsMeta()
 
     return (
-        <div className="max-w-3xl mx-auto p-6">
-            <ul className={""}>
-                {posts.map(post => (
-                    <li key={post.metadata.date} className={"m-4 hover:underline"}>
-                        <Link href={`/blog/${post.slug}`} className={'m-4 p-6'}>{post.metadata.date} - {post.metadata.title}</Link>
+        <div className="">
+            <ul>
+                {postsMeta.map(post => (
+                    <li key={post.meta.date} className={"m-4"}>
+                        <Link href={`/blog/${post.meta.slug}`} className={'text-xl font-semibold hover:underline'}>{post.meta.title}</Link>
+                        <p className={'text-sm text-gray-600 dark:text-gray-400'}>{ new Date(post.meta.date).toLocaleDateString() }</p>
+                        <p className={'text-sm text-gray-600 dark:text-gray-400'}>{ post.meta.summary }</p>
                     </li>
                 ))}
             </ul>
