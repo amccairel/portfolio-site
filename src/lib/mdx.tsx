@@ -16,7 +16,7 @@ export async function getPost(slug: string) {
     const { content } = parseContent(rawContent)
 
     const { default: Post } = await evaluate(content, {
-        ...runtime
+        ...runtime // Provides JSX transformation for MDX
     })
 
     return { Post }

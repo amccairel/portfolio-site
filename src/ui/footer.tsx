@@ -8,19 +8,19 @@ export default function Footer() {
                     href="https://github.com/amccairel"
                     className="flex items-center gap-2 text-blue-600 hover:underline"
                 >
-                    <LinkIcon className="w-5 h-5" /> GitHub
+                    <LinkIcon className="w-5 h-5" /> github
                 </a>
                 <a
                     href="https://www.linkedin.com/in/alex-mccairel-b0b2b463"
                     className="flex items-center gap-2 text-blue-600 hover:underline"
                 >
-                    <LinkIcon className="w-5 h-5" /> LinkedIn
+                    <LinkIcon className="w-5 h-5" /> linkedin
                 </a>
                 <a
                     href="mailto:mccairelaw@gmail.com"
                     className="flex items-center gap-2 text-blue-600 hover:underline"
                 >
-                    <EnvelopeIcon className="w-5 h-5" /> Email
+                    <EnvelopeIcon className="w-5 h-5" /> email
                 </a>
             </div>
         </footer>
