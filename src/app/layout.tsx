@@ -6,6 +6,7 @@ import Footer from "@/ui/footer";
 export const metadata: Metadata = {
   title: "Alex McCairel | Portfolio",
   description: "My software developer portfolio.",
+  icons: "/favicon.ico",
 }
 
 export default function RootLayout({

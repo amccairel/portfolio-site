@@ -16,8 +16,9 @@ export default function About() {
             </p>
             <p className="mb-8">
                 professionally, i&apos;m finding myself interested in financial and realtime systems. how to scale such
-                a system. low latency. high stakes. i find embedded systems interesting as well and am close to dusting
-                off the ol&apos; arduino and raspberry pi to explore that avenue of software.
+                a system. low latency. high stakes. as far as programming languages go, i&apos;m currently exploring
+                <a href={'https://go.dev'} className={'hover:underline text-blue-600'}> Go</a> and re-familiarizing
+                myself with <a href={'https://www.cppreference.com'} className={'hover:underline text-blue-600'}>C/C++</a>.
             </p>
             <p className="mb-8">
                 we are so much more than just our professional selves. below are some of my hobbies and interests
@@ -33,7 +34,7 @@ export default function About() {
             <h2 className={'text-xl mb-4'}>interests</h2>
             <h3 className={'text-lg mb-4'}>aka, things i wish i dedicated more time to</h3>
             <ul className="list-disc list-inside mb-4">
-                <li>cooking, surprisingly talented but lacking in recipe repertoire</li>
+                <li>cooking, love experimenting in the kitchen but lacking in recipe repertoire</li>
                 <li>backpacking, it&apos;s been a hot summer or two since i&apos;ve done this</li>
                 <li>some good books, i&apos;m always reading the news</li>
                 <li>learning a new language, ya&apos;know, like the kind spoken to people, not computers</li>

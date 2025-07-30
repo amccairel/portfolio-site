@@ -1,9 +1,9 @@
 ---
 slug: "building-a-portfolio-site"
 title: "building a portfolio site"
-date: "2025-07-02"
+date: "2025-07-25"
 summary: "steps taken, choices made, while building my Next.js personal portfolio site."
-published: false
+published: true
 tags:
   - next.js
   - react
@@ -16,53 +16,56 @@ tags:
 
 # building a portfolio site
 
-## introduction
+## intro
 
-### intent and vision for portfolio site
+### intent and vision
 
 i created this portfolio site, specifically the blog section, to share discourse on software engineering topics
-and discuss projects i'm working on - or previously worked on. i'm a regular engineer trying to earn
-my chili, make some meaning, and enjoy this ride. if you're on a similar path - welcome!
+and discuss projects i'm working on - or previously worked on. i'm a regular engineer who loves to learn, build
+meaningful projects, and enjoy this ride along the way. if you're on a similar path - welcome!
 
-let's get started, shall we? what frameworks and libraries were used. how is it hosted, and so on...
+prefer to just jump into the code for this project? check out the [github repository](https://github.com/amccairel/portfolio-site). want
+a deeper dive on what frameworks and libraries were used, how it's hosted, and so on...follow below for more details!
 
 ## Next.js
 
-### *the* framework. jk, one of many React frameworks.
+### one of many React frameworks
 
 even one of many web frameworks, like [Angular](https://angular.dev) or [Vue.js](https://vuejs.org). why **[Next.js](https://nextjs.org)** and a [React](https://react.dev)
-framework? i'll tell you why. it would make little sense to be writing this, otherwise, would it.
+framework?
 
-first, i chose Next.js because i simply wanted to learn a React framework. my industry experience has been in other
+first, i simply wanted to learn a React framework. my industry experience has been in other
 frameworks for full-stack web development — like Angular and Vue.js. why not use this as an opportunity to learn something
 different!
 
 the second reason can be deemed more interesting. you can serve a production Next.js application a few different
-ways. you can statically serve the app using a static site generator (SSG). or you could server side render components
+ways. you can statically serve the app using a static site generator. or you could server side render components
 and send them to the client. even further, you could serve a full-stack Next.js application, backend and frontend all
 in one.
 
 you might wonder, "isn't this framework a little overpowered for a simple blog?" i completely agree. it **is** overboard.
-however, the static site generation is appealing here. i'd like to easily publish content and a SSG is well suited for
-that purpose.
-
-last, if i ever want to evolve from just a static blog, those options are still on the table with Next.js. you want to
-take it full-stack with a contact form, interactive project demos, and some REST apis for visitors to sample? those
-features are available.
+however, the SSG is appealing here since it serves the purpose of delivering content quickly. but if i ever want to
+evolve from just a static blog, those options above are still on the table with Next.js. you want to take it full-stack
+with a contact form, interactive project demos, and some REST apis for visitors to sample? those features are available.
 
 ## useful libraries and frameworks
 
-### because building everything from scratch is unreasonable.
+### because building everything from scratch is unreasonable
+
+#### styling
 
 for styling throughout the portfolio site, i used [tailwindcss](https://tailwindcss.com). great experience with the
 CSS framework. very intuitive to use. it can feel a little clustered with all the tailwindcss utility classes in your
-markdown. with some effort, I’m sure I could clean that up — but for a small, simply styled app, it’s fine.
-i'm not a frontend developer. in addition, [@tailwindcss/typography](https://github.com/tailwindlabs/tailwindcss-typography) is a plugin to style your blog prose uniformly
-and easily.
+markdown. with some effort, I’m sure I could clean that up — but for a small, simply styled app, it’s fine. in addition,
+[@tailwindcss/typography](https://github.com/tailwindlabs/tailwindcss-typography) is a plugin to style your blog prose uniformly and easily.
+
+#### content with MDX
 
 creating the blog content was easy. write your content as [MDX](https://mdxjs.com), a superset of [Markdown](https://daringfireball.net/projects/markdown/syntax), which is a markup
 language for formatting text. when writing long posts with lots of links, headers, emphasis, and so on, it can be easier
 than writing HTML.
+
+#### MDX integration
 
 recall that Next.js does not support MDX out-of-the-box. how do we convert the content from our MDX files into usable
 React components? on top of that, is it possible to dynamically visit posts, or does a page per
@@ -74,7 +77,7 @@ the steps are as follows:
 1. set up the necessary configuration to import and render MDX files in your route structure
 2. read the file, if you have frontmatter, parse it. i liked the [gray-matter](https://github.com/jonschlinkert/gray-matter) plugin.
 
-```
+```ts
 import matter from 'gray-matter'
 
 function parseMetaData(rawContent: string) {
@@ -92,7 +95,7 @@ function parseContent(rawContent: string) {
 
 3. convert the markdown to a usable React component
 
-```
+```ts
 import path from 'path'
 import { evaluate } from '@mdx-js/mdx'
 import * as runtime from 'react/jsx-runtime'
@@ -115,10 +118,10 @@ markdown content into executable React components. this is imported from React's
 
 4. display the component on your desired page
 
-```
+```ts
 import { getPost } from '@/lib/mdx'
 
-export default async function Page({ params } : { params: Promise<{ slug: string}> }) {
+export default async function Page({ params } : { params: { slug: string} }) {
     const { slug } = await params
     const { Post } = await getPost(slug)
 
@@ -130,10 +133,9 @@ export default async function Page({ params } : { params: Promise<{ slug: string
 }
 ```
 
-
 ## deploying
 
-### sometimes the simple option is the best option.
+### sometimes the simple option is the best option
 
 there are a number of ways to deploy a Next.js application. Netlify. AWS. if you want to get technical with it, you
 could containerize the application with [Docker](https://www.docker.com) and self-host. that's a great feature of Next.js — it's
@@ -143,12 +145,22 @@ out of simplicity, i went with [Vercel](https://vercel.com). they created Next.j
 experience with automatic deployments from Git, built-in analytics, and seamless handling of all Next.js features.
 this allows one to focus on content and future projects, instead of infrastructure.
 
+you will need to buy a domain name unless you are accepting of Vercel's provided domain. i went with [namecheap](https://www.namecheap.com)
+to purchase alexmccairel.dev for this site and added it to my Vercel account. the process was straightforward — buy the
+domain, configure DNS records in namecheap to point to Vercel's servers, and add the domain in your Vercel project
+settings. within fifteen minutes, the custom domain was live with automatic SSL certificates handled by Vercel.
+
+having a custom domain makes a significant difference for a portfolio site. instead of sharing
+`portfolio-site-ds7n7vrv5-amccairels-projects.vercel.app` (quite the mouthful), visitors can simply go to
+alexmccairel.dev. it's cleaner, more memorable, and more professional — well worth the ~$15/year investment.
+
 ## conclusion
 
-### a fun framework.
+### a fun framework
 
 thank you for taking the time to read. i enjoyed explaining Next.js and why i chose it as a framework for building my
 portfolio site. i hope it helps anyone building a similar application. it's a great React framework with plenty of
 community support for your web application needs. it's more than just a static site generator. it can support full-stack
 capabilities. this makes it a respectable choice for a software engineer like myself, who may want to add more advanced
-features down the line. cheers, thanks for joining me on the deep dive!
+features down the line. cheers, thanks for joining me on the deep dive and feel free to reach out if you are implementing
+something similar!
