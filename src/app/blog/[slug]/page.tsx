@@ -13,7 +13,7 @@ export default async function Page({ params } : { params: Promise<{ slug: string
 }
 
 export function generateStaticParams() {
-    return [{ slug: 'building-a-portfolio-site'},{ slug: 'moving-averages'}]
+    return [{ slug: 'building-a-portfolio-site'},{ slug: 'moving-average'}]
 }
 
 export const dynamicParams = false
