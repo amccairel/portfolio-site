@@ -30,12 +30,8 @@ export default function ThemeToggle() {
     }
 
     return (
-        <button
-            onClick={toggleTheme}
-            className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors duration-300  px-1`}
-        >
-            <MoonIcon
-                className={`h-4 w-4 text-stone-800 absolute mt-1 ${
+        <button onClick={toggleTheme} className={'inline-flex items-center'}>
+            <MoonIcon className={`h-4 w-4 text-stone-800 absolute mt-1 ${
                     isDark ? "opacity-0" : "opacity-100"
                 } transition-opacity duration-300`}
             />

@@ -10,8 +10,8 @@ export default function Header() {
                     <Link href="/" className="hover:underline">alex.mccairel</Link>
                 </div>
                 <div className="flex items-center space-x-4 font-medium">
-                    <Link href="/about" className="hover:underline">about</Link>
-                    <Link href="/blog" className="hover:underline">blog</Link>
+                    <Link href="/about" className="hover:underline">About</Link>
+                    <Link href="/blog" className="hover:underline">Blog</Link>
                     <ThemeToggle />
                 </div>
             </nav>
