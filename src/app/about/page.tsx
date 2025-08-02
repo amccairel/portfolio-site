@@ -2,24 +2,24 @@
 
 export default function About() {
     return (
-        <section className="px-6 py-8">
-            <p className={'mb-8'}>
+        <section className="px-6 py-2">
+            <p className={'mb-4'}>
                 I&apos;m Alex, I&apos;ve worn a lot of hats. I&apos;ve been a college dropout. When I first went, I thought I
                 wanted to be chemist, the science <b>was</b> intriguing. I was an electrician for about five years
                 after that. I worked on some very large projects with complex problems to tackle.
             </p>
-            <p className={'mb-8'}>
+            <p className={'mb-4'}>
                 Still, at a certain point, I was yearning for more of a mental challenge in my work. I went back to
                 school originally pursuing a mathematics degree, but somewhere along the way, fell in love with software.
                 The mental challenge, the satisfaction of being able to see your work accomplished, the ubiquity of its
                 use all around us. Chef&apos;s kiss.
             </p>
-            <p className={'mb-8'}>
+            <p className={'mb-4'}>
                 Now with a mathematics degree in hand, an internship, and a couple of positions later, I can say that
                 I&apos;m a software engineer. It&apos;s a path I&apos;ve explored for a few years now and plan to travel
                 on for many more to come.
             </p>
-            <p className="mb-8">
+            <p className="mb-4">
                 Professionally, I&apos;m finding myself interested in financial and realtime systems. How to scale such
                 a system. Low latency. High stakes. As far as programming languages go, I&apos;m currently exploring
                 <a href={'https://go.dev'} className={'hover:underline text-blue-800 dark:text-amber-600'}> Go </a>
@@ -27,7 +27,7 @@ export default function About() {
                                                     className={'hover:underline text-blue-800 dark:text-amber-600'}>
                      C/C++</a>.
             </p>
-            <p className="mb-8">
+            <p className="mb-4">
                 We are so much more than just our professional selves. Below are some of my hobbies and interests
                 outside of work. If you share any interests, professional or lifestyle, feel free to send me a message.
             </p>

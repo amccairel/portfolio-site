@@ -43,7 +43,7 @@ export default function Experience() {
     ]
 
     return (
-        <section id={'experience'} className={'px-6 py-6 space-y-4'}>
+        <section id={'experience'} className={'px-6 py-2 space-y-4'}>
             <h2 className="text-3xl font-bold mb-4 flex items-center gap-2">
                 <BriefcaseIcon className="w-6 h-6 text-blue-800 dark:text-amber-600" />Experience
             </h2>
