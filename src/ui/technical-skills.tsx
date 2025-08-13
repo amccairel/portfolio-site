@@ -8,10 +8,10 @@ export default function TechnicalSkills() {
                 Technical Skills
             </h2>
             <ul className="list-disc list-inside space-y-1 text-gray-800 dark:text-gray-200">
-                <li><strong>Languages:</strong> Java, C++, Python, Go, TypeScript</li>
-                <li><strong>Frameworks:</strong> Spring, Vue.js, Angular, Next.js</li>
-                <li><strong>Tools:</strong> IntelliJ, CLion, PyCharm, Postman, Maven, Vite, CMake</li>
-                <li><strong>Cloud & DevOps:</strong> Git, GitHub, Google Cloud Platform, GitHub Actions</li>
+                <li><strong>Languages:</strong> Java, C++, Python, Go, TypeScript, JavaScript, SQL</li>
+                <li><strong>Frameworks:</strong> Spring Boot, Spring MVC, Next.js, Vue.js, Angular</li>
+                <li><strong>Tools & Platforms:</strong> RabbitMQ, Okta, ArcGIS JavaScript SDK, Microsoft SQL Server</li>
+                <li><strong>DevOps & Cloud:</strong> Git, GitHub Actions, Google Cloud Platform, CI/CD</li>
             </ul>
         </section>
     )
