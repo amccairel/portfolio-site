@@ -1,4 +1,5 @@
 import { CodeBracketIcon } from '@heroicons/react/16/solid'
+import Link from "next/link"
 import { JSX } from 'react'
 
 export default function Projects() {
@@ -15,19 +16,26 @@ export default function Projects() {
             stack: "C++",
             dates: "Jun 2025 - Present",
             achievements: [
-                "Built a high-performance command-line tool in C++ to process open high low close (OHLC) stock data from CSV files and compute moving averages (e.g., simple, exponential) across user-defined time windows.",
-                "Enabled flexible analysis by allowing users to compute and export multiple simultaneous indicators (e.g., 12- and 26-day EMA), laying groundwork for financial signal modeling.",
+                "Built a high-performance command-line tool in C++ to process Open High Low Close stock data from CSV files and compute moving averages across user-defined time windows.",
+                "Enabled flexible analysis by allowing users to compute and export multiple simultaneous indicators (e.g., 12- & 26-day EMA, 20 & 50-day SMA), laying groundwork for financial signal modeling.",
+                "Used for analyzing short and long term price trends in stock data.",
                 <><a href={'https://github.com/amccairel/moving_average_cli'} className={'text-blue-800 dark:text-amber-600 hover:underline'}>Try it out!</a></>
             ]
         },
         {
             name: "Portfolio Site",
-            stack: "Next.js, Typescript, tailwindcss",
+            stack: "Next.js, TypeScript, Tailwind CSS",
             dates: "Jun 2025 - Present",
             achievements: [
-                "Built a portfolio site using the React framework Next.js.",
-                "Chosen for its ability to statically serve blog content stored in MDX files as well as easily be deployed to the likes of Vercel, self-hosted, containerized, your choice.",
-                "Modular design with a snappy user experience. supports light and dark mode."
+                "Developed a modern portfolio and blog to showcase experience and projects I’ve worked on.",
+                "Next.js chosen for the flexibility of deploying to static site generator initially, with the ability to incorporate full-stack capabilities later.",
+                "Implemented a blog feature with markdown content stored in MDX files, then compiled into usable React components, allowing me to serve content dynamically and update or create content quickly.",
+                <>
+                    <Link href={'/blog/building-a-portfolio-site'}
+                          className={'text-blue-800 dark:text-amber-600 hover:underline'}>
+                        For a deeper looker on how this site was made.
+                    </Link>
+                </>
             ]
         }
     ]

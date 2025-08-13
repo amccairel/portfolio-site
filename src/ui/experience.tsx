@@ -26,8 +26,8 @@ export default function Experience() {
             company: 'Employers Insurance Company',
             dates: "Jan 2023 - Sep 2023",
             achievements: [
-                "Built an multi-factor authentication user management app with Angular, Spring Boot, and Okta, automating user authentication settings.",
-                "Created Java-based tools to clean orphaned files in document storage systems, improving backend performance."
+                "Built a multi-factor authentication (MFA) user management app with Angular, Spring Boot, and Okta, cutting the need for service desk to fulfill requests and automating user authentication settings.",
+                "Created Java-based tools for cleaning orphaned files in document storage systems, improving backend performance and resource usage."
             ]
         },
         {
@@ -36,8 +36,8 @@ export default function Experience() {
             company: 'Employers Insurance Company',
             dates: "Oct 2021 - Jan 2023",
             achievements: [
-                "Migrated internal access request forms to a secure Spring/Angular app with MongoDB, reducing manual processes.",
-                "Created Java-based tools to clean orphaned files in document storage systems, improving backend performance."
+                "Modernized internal access request forms by migrating to a Spring/Angular web app, reducing manual service desk processes and increasing automated workflows.",
+                "Developed a real-time service health dashboard with Angular + Spring, increasing internal visibility into uptime and alerts, significantly decreasing response time to incidents."
             ]
         }
     ]
