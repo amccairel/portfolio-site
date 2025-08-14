@@ -5,7 +5,7 @@ import Footer from "@/ui/footer";
 
 export const metadata: Metadata = {
   title: "Alex McCairel | Portfolio",
-  description: "My software developer portfolio.",
+  description: "Experience and take technical deep dives at the intersection of software projects and personal interests.",
   icons: "/favicon.ico",
 }
 
