@@ -116,7 +116,7 @@ export async function getPost(slug: string) {
 The `runtime` object contains the React JSX runtime, which provides the necessary functions for MDX to compile your
 markdown content into executable React components. This is imported from React's built-in JSX runtime.
 
-4. display the component on your desired page
+4. Display the component on your desired page
 
 ```ts
 import { getPost } from '@/lib/mdx'
@@ -141,11 +141,11 @@ There are a number of ways to deploy a Next.js application. Netlify. AWS. If you
 could containerize the application with [Docker](https://www.docker.com) and self-host. That's a great feature of Next.js — it's
 flexible about hosting options.
 
-Out of simplicity, I went with [Vercel](https://vercel.com). They created Next.js, have a generous free tier, excellent developer
+Out of simplicity, I chose [Vercel](https://vercel.com). They created Next.js, have a generous free tier, excellent developer
 experience with automatic deployments from Git, built-in analytics, and seamless handling of all Next.js features.
 This allows one to focus on content and future projects, instead of infrastructure.
 
-You will need to buy a domain name unless you are accepting of Vercel's provided domain. I went with [namecheap](https://www.namecheap.com)
+You will need to buy a domain name unless you are accepting of Vercel's provided domain. I went with [Namecheap](https://www.namecheap.com)
 to purchase alexmccairel.dev for this site and added it to my Vercel account. The process was straightforward. Buy the
 domain, configure DNS records in namecheap to point to Vercel's servers, and add the domain in your Vercel project
 settings. In less than five minutes, the custom domain was live with automatic SSL certificates handled by Vercel.
