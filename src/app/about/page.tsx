@@ -4,20 +4,21 @@ export default function About() {
     return (
         <section className="px-6 py-2">
             <p className={'mb-4'}>
-                I&apos;m Alex, I&apos;ve worn a lot of hats. I&apos;ve been a college dropout. When I first went, I thought I
-                wanted to be chemist, the science <b>was</b> intriguing. I was an electrician for about five years
-                after that. I worked on some very large projects with complex problems to tackle.
+                I&apos;m Alex, and I&apos;ve taken a winding path to software engineering. I started studying chemistry,
+                drawn to the intriguing science, but ultimately left to pursue hands-on work as an electrician. For five
+                years, I tackled complex problems on large-scale projects, learning to think systematically and work
+                under pressure.
             </p>
             <p className={'mb-4'}>
-                Still, at a certain point, I was yearning for more of a mental challenge in my work. I went back to
-                school originally pursuing a mathematics degree, but somewhere along the way, fell in love with software.
-                The mental challenge, the satisfaction of being able to see your work accomplished, the ubiquity of its
-                use all around us. Chef&apos;s kiss.
+                Eventually, I found myself craving more intellectual challenges and returned to school for mathematics.
+                Somewhere along the way, I discovered software development and fell hard for it. The mental rigor, the
+                tangible satisfaction of seeing your work come to life, and the way it touches nearly everything around
+                us. Chef&apos;s kiss.
             </p>
             <p className={'mb-4'}>
-                Now with a mathematics degree in hand, an internship, and a couple of positions later, I can say that
-                I&apos;m a software engineer. It&apos;s a path I&apos;ve explored for a few years now and plan to travel
-                on for many more to come.
+                With my mathematics degree complete and several positions under my belt, I&apos;ve grown into the
+                software engineer I am today. It&apos;s been an evolving journey over the past few years, and I&apos;m
+                excited to see where it leads next.
             </p>
             <p className="mb-4">
                 Professionally, I&apos;m finding myself interested in financial and realtime systems. How to scale such
